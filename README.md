@@ -1,6 +1,6 @@
 # 大模型 + 强化学习论文精选（2023 至今）
 
-> 最近更新：2026-11-17　|　推荐落地 141 篇 · 方法新颖 119 篇 · 已审阅 340 篇（排除 22 篇）
+> 最近更新：2026-11-17　|　推荐落地 154 篇 · 方法新颖 140 篇 · 已审阅 400 篇（排除 29 篇）
 
 来源：NeurIPS / ICML / ICLR / ACL / EMNLP / NAACL / AAAI / IJCAI 录用论文，以及高引用 arXiv 预印本。每周一自动增量更新。
 
@@ -18,15 +18,15 @@
 
 ## 目录
 
-- [推理RL算法](#推理rl算法)（65）
-- [RLHF/偏好对齐](#rlhf偏好对齐)（46）
-- [奖励模型/PRM](#奖励模型prm)（36）
-- [Agent/工具RL](#agent工具rl)（68）
-- [训练系统/效率](#训练系统效率)（24）
-- [多模态RL](#多模态rl)（33）
-- [分析/实证](#分析实证)（27）
+- [推理RL算法](#推理rl算法)（81）
+- [RLHF/偏好对齐](#rlhf偏好对齐)（51）
+- [奖励模型/PRM](#奖励模型prm)（38）
+- [Agent/工具RL](#agent工具rl)（77）
+- [训练系统/效率](#训练系统效率)（26）
+- [多模态RL](#多模态rl)（41）
+- [分析/实证](#分析实证)（35）
 - [数据集/基准](#数据集基准)（6）
-- [技术报告](#技术报告)（13）
+- [技术报告](#技术报告)（16）
 
 ## 推理RL算法
 
@@ -45,12 +45,18 @@
 | A 推荐落地 | [VAPO: Efficient and Reliable Reinforcement Learning for Advanced Reasoning Tasks](https://arxiv.org/abs/2504.05118) | arXiv 2025 | 288 |  | VAPO：基于 value 的 PPO 增强，AIME 60.4，训练稳定 |
 | A 推荐落地 | [Logic-RL: Unleashing LLM Reasoning with Rule-Based Reinforcement Learning](https://arxiv.org/abs/2502.14768) | arXiv 2025 | 247 |  | Logic-RL：逻辑谜题规则奖励 RL，配方简单可复现 |
 | A 推荐落地 | [GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward RL Optimization](https://arxiv.org/abs/2601.05242) | arXiv 2026 | 239 |  | GDPO：多奖励分别归一化，解决 GRPO 多奖励优势坍缩，改动小 |
+| A 推荐落地 | [ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models](https://openreview.net/forum?id=YPsJha5HXQ) [arXiv](https://arxiv.org/abs/2505.24864) | NeurIPS 2025 | 200 |  | ProRL：KL 控制与参考策略周期重置支撑长时 RL，实证扩展推理边界，并开源 1.5B 模型 |
 | A 推荐落地 | [VinePPO: Refining Credit Assignment in RL Training of LLMs](https://openreview.net/forum?id=Myx2kJFzAn) [arXiv](https://arxiv.org/abs/2410.01679) | ICML 2025 | 187 |  | VinePPO：蒙特卡洛估计替代 value 网络，信用分配更准确 |
 | A 推荐落地 | [GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](https://openreview.net/forum?id=inccdtfx8x) [arXiv](https://arxiv.org/abs/2504.02546) | ICLR 2026 | 178 | ✓ | GPG：去 critic/参考模型/KL 的极简策略梯度基线 |
+| A 推荐落地 | [A Minimalist Approach to LLM Reasoning: from Rejection Sampling to Reinforce](https://arxiv.org/abs/2504.11343) | arXiv 2025 | 156 |  | 证明拒绝采样基线 RAFT++ 可与 GRPO 匹敌，提出过滤全错/全对样本的 Reinforce-Rej，实现极简 |
 | A 推荐落地 | [Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](https://openreview.net/forum?id=GqYSunGmp7) [arXiv](https://arxiv.org/abs/2505.24760) | NeurIPS 2025 Spotlight | 155 |  | Reasoning Gym：100+ 可调难度程序化 RLVR 环境 |
 | A 推荐落地 | [Skywork Open Reasoner 1 Technical Report](https://arxiv.org/abs/2505.22312) | arXiv 2025 | 146 | ✓ | Skywork-OR1 开源 RL 配方，长 CoT 模型 AIME 大幅提升，含熵坍缩分析 |
+| A 推荐落地 | [REINFORCE++: Stabilizing Critic-Free Policy Optimization with Global Advantage Normalization](https://arxiv.org/abs/2501.03262) | arXiv 2025 | 137 |  | REINFORCE++：全局优势归一化的 critic-free 策略优化，已集成于 OpenRLHF，稳定且省显存 |
 | A 推荐落地 | [Big-Math: A Large-Scale, High-Quality Math Dataset for Reinforcement Learning in Language Models](https://arxiv.org/abs/2502.17387) | arXiv 2025 | 110 | ✓ | Big-Math：25 万可验证数学题，专为 RL 构建 |
+| A 推荐落地 | [SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](https://openreview.net/forum?id=hgJQcuDwm1) [arXiv](https://arxiv.org/abs/2504.08600) | NeurIPS 2025 | 108 | ✓ | SQL-R1：基于执行反馈奖励的 NL2SQL 强化学习，开源，7B 模型在 Spider/BIRD 达竞争性精度，落地场景明确 |
 | A 推荐落地 | [GRPO-LEAD: A Difficulty-Aware Reinforcement Learning Approach for Concise Mathematical Reasoning in Language Models](https://aclanthology.org/2025.emnlp-main.287/) [arXiv](https://arxiv.org/abs/2504.09696) | EMNLP 2025 | 99 | ✓ | GRPO-LEAD：长度正则 + 错误惩罚 + 难度重加权，改动小 |
+| A 推荐落地 | [Soft Adaptive Policy Optimization](https://arxiv.org/abs/2511.20347) | arXiv 2025 | 97 |  | SAPO：以温度控制的软门替代硬裁剪，缓解 token 级重要性比率高方差，稳定 MoE RL，已用于 Qwen3-VL 训练 |
+| A 推荐落地 | [DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning](https://arxiv.org/abs/2511.22570) | arXiv 2025 | 83 |  | DeepSeekMath-V2：生成器与验证器协同 RL 训练实现证明级自验证，开源权重，竞赛级定理证明表现突出 |
 | A 推荐落地 | [AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy](https://openreview.net/forum?id=IaEqjWXd1d) [arXiv](https://arxiv.org/abs/2506.13284) | ICLR 2026 | 81 | ✓ | SFT 与 RL 协同的规模化实践，给出 RL 温度选择经验 |
 | A 推荐落地 | [JustRL: Scaling a 1.5B LLM with a Simple RL Recipe](https://openreview.net/forum?id=1mm0o27y5N) [arXiv](https://arxiv.org/abs/2512.16649) | ICLR 2026 | 69 | ✓ | JustRL：单阶段固定超参极简配方，算力减半且稳定 |
 | A 推荐落地 | [SynLogic: Synthesizing Verifiable Reasoning Data at Scale for Learning Logical Reasoning and Beyond](https://openreview.net/forum?id=XtNiw8OQsy) [arXiv](https://arxiv.org/abs/2505.19641) | NeurIPS 2025 | 53 | ✓ | 可验证逻辑推理数据规模化合成，直接用于 RLVR |
@@ -64,15 +70,18 @@
 | B 方法新颖 | [TTRL: Test-Time Reinforcement Learning](https://openreview.net/forum?id=VuVhgEiu20) [arXiv](https://arxiv.org/abs/2504.16084) | NeurIPS 2025 | 285 | ✓ | TTRL：多数投票作为奖励在无标注测试数据上做 RL |
 | B 方法新颖 | [Monte Carlo Tree Search Boosts Reasoning via Iterative Preference Learning](https://arxiv.org/abs/2405.00451) | arXiv 2024 | 276 | ✓ | MCTS 迭代偏好学习（步级 DPO） |
 | B 方法新颖 | [d1: Scaling Reasoning in Diffusion Large Language Models via Reinforcement Learning](https://openreview.net/forum?id=7ZVRlBFuEv) [arXiv](https://arxiv.org/abs/2504.12216) | NeurIPS 2025 Spotlight | 210 |  | d1：扩散 LLM 的 diffu-GRPO |
+| B 方法新颖 | [Pass@k Training for Adaptively Balancing Exploration and Exploitation of Large Reasoning Models](https://arxiv.org/abs/2508.10751) | arXiv 2025 | 148 |  | 以 Pass@k 作为 RLVR 奖励并推导解析优势估计，缓解 Pass@1 奖励导致的探索不足 |
 | B 方法新颖 | [Right Question is Already Half the Answer: Fully Unsupervised LLM Reasoning Incentivization](https://openreview.net/forum?id=k8Mim6RI5O) [arXiv](https://arxiv.org/abs/2504.05812) | NeurIPS 2025 Spotlight | 140 | ✓ | EMPO：语义熵最小化的无监督推理激励 |
 | B 方法新颖 | [Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](https://openreview.net/forum?id=KJvHnl3kUv) [arXiv](https://arxiv.org/abs/2506.06632) | ICLR 2026 | 130 | ✓ | E2H：由易到难课程 RL |
 | B 方法新颖 | [Self-Distilled RLVR](https://openreview.net/forum?id=TAt6jrbMb8) [arXiv](https://arxiv.org/abs/2604.03128) | NeurIPS 2026 Spotlight | 126 |  | 自蒸馏 RLVR：分析特权教师信号缺陷并结合可验证奖励 |
 | B 方法新颖 | [Amortizing intractable inference in large language models](https://openreview.net/forum?id=Ouj6p4ca60) [arXiv](https://arxiv.org/abs/2310.04363) | ICLR 2024 Oral | 122 | ✓ | GFlowNet 微调实现难解后验的摊销推断 |
 | B 方法新颖 | [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](https://openreview.net/forum?id=7Yayy5fNLg) [arXiv](https://arxiv.org/abs/2506.24119) | ICLR 2026 | 115 | ✓ | SPIRAL：零和博弈自博弈多轮多 Agent RL |
+| B 方法新颖 | [What's Behind PPO's Collapse in Long-CoT? Value Optimization Holds the Secret](https://arxiv.org/abs/2503.01491) | arXiv 2025 | 110 |  | VC-PPO：指出价值初始化偏差与奖励衰减导致长 CoT 下 PPO 崩溃，提出价值预训练与解耦 GAE 修正 |
 | B 方法新颖 | [Pass@K Policy Optimization: Solving Harder Reinforcement Learning Problems](https://openreview.net/forum?id=W6WC6047X2) [arXiv](https://arxiv.org/abs/2505.15201) | NeurIPS 2025 Spotlight | 103 | ✓ | PKPO：直接优化 pass@k 的奖励变换，提升难题探索 |
 | B 方法新颖 | [TreeRL: LLM Reinforcement Learning with On-Policy Tree Search](https://aclanthology.org/2025.acl-long.604/) [arXiv](https://arxiv.org/abs/2506.11902) | ACL 2025 | 101 | ✓ | TreeRL：在线树搜索 RL，提供稠密过程奖励而无需独立 PRM |
 | B 方法新颖 | [Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback](https://arxiv.org/abs/2506.03106) | arXiv 2025 | 98 | ✓ | Critique-GRPO：自然语言批评与数值奖励联合优化 |
 | B 方法新颖 | [Outcome-based Exploration for LLM Reasoning](https://arxiv.org/abs/2509.06941) | arXiv 2025 | 98 |  | 基于结果的探索奖励缓解 RL 多样性坍缩 |
+| B 方法新颖 | [SEED-GRPO: Semantic Entropy Enhanced GRPO for Uncertainty-Aware Policy Optimization](https://arxiv.org/abs/2505.12346) | arXiv 2025 | 98 |  | SEED-GRPO：以语义熵度量提示不确定性并调节优势幅度 |
 | B 方法新颖 | [Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](https://openreview.net/forum?id=KNAyc9DMe3) [arXiv](https://arxiv.org/abs/2509.06949) | ICLR 2026 | 93 | ✓ | 扩散语言模型的轨迹感知 RL 框架 TraceRL |
 | B 方法新颖 | [RLPR: Extrapolating RLVR to General Domains without Verifiers](https://arxiv.org/abs/2506.18254) | arXiv 2025 | 93 |  | RLPR：以参考答案生成概率作为奖励，无需验证器 |
 | B 方法新颖 | [Unifying Group-Relative and Self-Distillation Policy Optimization via Sample Routing](https://arxiv.org/abs/2604.02288) | arXiv 2026 | 88 |  | 按样本路由统一 GRPO 与自蒸馏，缓解 SDPO 后期坍缩 |
@@ -88,12 +97,19 @@
 | B 方法新颖 | [On-Policy Self-Distillation without Any Supervision](https://arxiv.org/abs/2608.06296) | arXiv 2026 | 30 | ✓ | 无监督在线自蒸馏（多数投票伪解） |
 | B 方法新颖 | [Scheduling Your LLM Reinforcement Learning with Reasoning Trees](https://openreview.net/forum?id=V4zln7XiJj) [arXiv](https://arxiv.org/abs/2510.24832) | ICLR 2026 | 23 | ✓ | 基于推理树结构的 RLVR 数据调度（r-score） |
 | B 方法新颖 | [RL of Thoughts: Navigating LLM Reasoning with Inference-time Reinforcement Learning](https://openreview.net/forum?id=Dw034qKrP5) [arXiv](https://arxiv.org/abs/2505.14140) | ICLR 2026 | 23 | ✓ | 推理时用 RL 训练轻量导航器选择思维结构 |
+| B 方法新颖 | [ConciseRL: Conciseness-Guided Reinforcement Learning for Efficient Reasoning Models](https://aclanthology.org/2025.findings-emnlp.927/) [arXiv](https://arxiv.org/abs/2505.17250) | EMNLP Findings 2025 | 18 | ✓ | ConciseRL：以 LLM 评判的无超参简洁度分数作为奖励，在保持准确率的同时缩短推理长度 |
+| B 方法新颖 | [On-policy Distillation with Verifiable Reward](https://arxiv.org/abs/2608.24696) | arXiv 2026 | 17 | ✓ | OPDVR：以轨迹正确性重构 on-policy 蒸馏的隐式奖励，无额外超参地融合 OPD 与 RLVR，代码开源 |
 | B 方法新颖 | [h1: Bootstrapping LLMs to Reason over Longer Horizons via Reinforcement Learning](https://openreview.net/forum?id=3BW15kSPfN) [arXiv](https://arxiv.org/abs/2510.07312) | ICML 2026 Spotlight | 13 | ✓ | 组合短程题目构造长程推理课程，仅用结果奖励 |
+| B 方法新颖 | [Sequential Beats Joint: On the Interplay between On-Policy Distillation and RLVR](https://aclanthology.org/2026.findings-emnlp.631/) [arXiv](https://arxiv.org/abs/2609.04108) | EMNLP Findings 2026 | 13 |  | 实证“先 OPD 后 RL”的两阶段方案优于联合优化，并从 pass@k 与参数更新角度解释覆盖-锐化分工 |
 | B 方法新颖 | [Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](https://openreview.net/forum?id=iIvPuXoDs1) [arXiv](https://arxiv.org/abs/2510.00819) | ICLR 2026 | 8 | ✓ | 跟踪优化动态的稳定策略梯度 |
 | B 方法新颖 | [TraPO: A Semi-Supervised Reinforcement Learning Framework for Boosting LLM Reasoning](https://openreview.net/forum?id=3K1y4KbWAx) [arXiv](https://arxiv.org/abs/2512.13106) | ICLR 2026 | 7 | ✓ | 半监督 RLVR，少量标注抑制无监督坍缩 |
+| B 方法新颖 | [ReST-RL: Reinforcing LLM Reasoning through Unified Self-Training and Value-Guided Search](https://openreview.net/forum?id=Q5KwR2WUBr) [arXiv](https://arxiv.org/abs/2508.19576) | NeurIPS 2026 | 7 | ✓ | ReST-RL：以提升组内奖励方差的 ReST-GRPO 训练策略，并用 MCTS 目标训练价值模型做解码引导 |
 | B 方法新颖 | [SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning](https://openreview.net/forum?id=N8aP1JWy03) [arXiv](https://arxiv.org/abs/2608.23493) | ICML 2026 | 2 | ✓ | 自反思补丁作为稠密 token 级教师信号 |
+| B 方法新颖 | [SATURN: SAT-based Reinforcement Learning to Unleash LLMs Reasoning](https://openreview.net/forum?id=Sct4sajCi6) | NeurIPS 2025 Spotlight | 2 | ✓ | SATURN：以 SAT 问题构建可无限扩展、规则可验证、难度可控的 RL 训练课程（NeurIPS 2025 Spotlight） |
 | C 参考 | [HuatuoGPT-o1, Towards Medical Complex Reasoning with LLMs](https://arxiv.org/abs/2412.18925) | arXiv 2024 | 327 |  | 医学可验证问题 + 验证器奖励 RL |
 | C 参考 | [DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search](https://openreview.net/forum?id=I4YAIwrsXa) [arXiv](https://arxiv.org/abs/2408.08152) | ICLR 2025 | 237 | ✓ | 形式化证明在线 RL + RMaxTS 探索，领域专用 |
+| C 参考 | [Think Silently, Think Fast: Dynamic Latent Compression of LLM Reasoning Chains](https://openreview.net/forum?id=AQsko3PPUe) [arXiv](https://arxiv.org/abs/2505.16552) | NeurIPS 2025 | 116 |  | CoLaR：潜空间动态压缩推理链，以 SFT 为主、RL 仅作第二阶段辅助 |
+| C 参考 | [Maximizing Confidence Alone Improves Reasoning](https://arxiv.org/abs/2505.22660) | Trans. Mach. Learn. Res. 2025 | 96 |  | RENT：以熵最小化作为无监督奖励；其增益可能受 Qwen 系列数据污染影响，结论需谨慎对待 |
 | C 参考 | [Coevolving with the Other You: Fine-Tuning LLM with Sequential Cooperative Multi-Agent Reinforcement Learning](https://proceedings.neurips.cc/paper_files/paper/2024/hash/1c2b1c8f7d317719a9ce32dd7386ba35-Abstract-Conference.html) [arXiv](https://arxiv.org/abs/2410.06101) | NeurIPS 2024 | 57 | ✓ | 双 Agent 协作 RL 微调 |
 | C 参考 | [Ensembling Large Language Models with Process Reward-Guided Tree Search for Better Complex Reasoning](https://aclanthology.org/2025.naacl-long.515/) [arXiv](https://arxiv.org/abs/2412.15797) | NAACL 2025 | 56 | ✓ | PRM 引导树搜索的模型集成 |
 | C 参考 | [Unilaw-R1: A Large Language Model for Legal Reasoning with Reinforcement Learning and Iterative Inference](https://aclanthology.org/2025.emnlp-main.915/) [arXiv](https://arxiv.org/abs/2510.10072) | EMNLP 2025 | 21 | ✓ | 法律领域推理模型（SFT+RL） |
@@ -119,6 +135,7 @@
 | A 推荐落地 | [Fine-Tuning Language Models for Factuality](https://openreview.net/forum?id=WPZ2yPag4K) [arXiv](https://arxiv.org/abs/2311.08401) | ICLR 2024 | 308 | ✓ | 无人工标注的事实性 DPO（基于检索/置信度自动打分），降低幻觉 |
 | A 推荐落地 | [Self-Play Preference Optimization for Language Model Alignment](https://openreview.net/forum?id=a3PmRgAB5T) [arXiv](https://arxiv.org/abs/2405.00675) | ICLR 2025 | 299 |  | SPPO：自博弈逼近纳什均衡的偏好优化，实现简单 |
 | A 推荐落地 | [Reward Model Ensembles Help Mitigate Overoptimization](https://openreview.net/forum?id=dcjtMYkpXx) [arXiv](https://arxiv.org/abs/2310.02743) | ICLR 2024 | 296 | ✓ | 奖励模型集成缓解过优化，实现简单，工程收益明确 |
+| A 推荐落地 | [Direct Language Model Alignment from Online AI Feedback](https://arxiv.org/abs/2402.04792) | arXiv 2024 | 288 |  | OAIF：以 LLM 在线标注偏好使 DPO 等直接对齐方法在线化，实现简单且显著优于离线 DAP，已成在线 DPO 常规做法 |
 | A 推荐落地 | [Smaug: Fixing Failure Modes of Preference Optimisation with DPO-Positive](https://arxiv.org/abs/2402.13228) | arXiv 2024 | 286 | ✓ | DPO-Positive 修复 DPO 偏好样本似然下降问题 |
 | A 推荐落地 | [ReMax: A Simple, Effective, and Efficient Reinforcement Learning Method for Aligning Large Language Models]() [arXiv](https://arxiv.org/abs/2310.10505) | ICML 2024 | 221 | ✓ | ReMax：去 value 模型的 REINFORCE 变体，显存与速度优于 PPO |
 | A 推荐落地 | [Advancing LLM Reasoning Generalists with Preference Trees](https://openreview.net/forum?id=2ea5TNVR0c) [arXiv](https://arxiv.org/abs/2404.02078) | ICLR 2025 | 221 | ✓ | UltraInteract 偏好树数据，可用于 SFT/偏好学习/RM |
@@ -133,16 +150,20 @@
 | B 方法新颖 | [Statistical Rejection Sampling Improves Preference Optimization](https://openreview.net/forum?id=xbjSwwrQOe) [arXiv](https://arxiv.org/abs/2309.06657) | ICLR 2024 | 385 |  | RSO：统计拒绝采样构造偏好对 |
 | B 方法新颖 | [OpenChat: Advancing Open-source Language Models with Mixed-Quality Data](https://openreview.net/forum?id=AOJyfhWYHf) [arXiv](https://arxiv.org/abs/2309.11235) | ICLR 2024 | 371 | ✓ | C-RLFT：按数据来源作为粗粒度奖励的条件策略训练 |
 | B 方法新颖 | [Personalized Soups: Personalized Large Language Model Alignment via Post-hoc Parameter Merging](https://arxiv.org/abs/2310.11564) | arXiv 2023 | 325 | ✓ | 多偏好维度独立训练后参数合并实现个性化对齐 |
+| B 方法新颖 | [From $r$ to $Q^*$: Your Language Model is Secretly a Q-Function](https://arxiv.org/abs/2404.12358) | arXiv 2024 | 285 |  | 证明 DPO 在 token 级 MDP 中等价于学习最优 Q 函数，为 token 级信用分配与搜索解码提供理论依据 |
 | B 方法新颖 | [Direct Nash Optimization: Teaching Language Models to Self-Improve with General Preferences](https://arxiv.org/abs/2404.03715) | arXiv 2024 | 199 |  | DNO：一般偏好下的纳什优化自我改进 |
 | B 方法新颖 | [Personalized Language Modeling from Personalized Human Feedback](https://arxiv.org/abs/2402.05133) | arXiv 2024 | 186 | ✓ | 个性化 RLHF（轻量用户模型） |
 | B 方法新颖 | [DPO Meets PPO: Reinforced Token Optimization for RLHF](https://openreview.net/forum?id=IfWKVF6LfY) [arXiv](https://arxiv.org/abs/2404.18922) | ICML 2025 Spotlight | 153 | ✓ | 将 RLHF 建模为 token 级 MDP，用 DPO 隐式奖励提供稠密信号增强 PPO |
 | B 方法新颖 | [MAPO: Advancing Multilingual Reasoning through Multilingual-Alignment-as-Preference Optimization](https://aclanthology.org/2024.acl-long.539/) [arXiv](https://arxiv.org/abs/2401.06838) | ACL 2024 | 107 | ✓ | 多语言推理一致性作为偏好进行优化 |
+| B 方法新颖 | [Jointly Reinforcing Diversity and Quality in Language Model Generations](https://arxiv.org/abs/2509.02534) | arXiv 2025 | 98 |  | DARLING：以学习的语义划分器度量多样性并与质量奖励相乘，在线 RL 同时提升质量与多样性 |
 | B 方法新颖 | [REBEL: Reinforcement Learning via Regressing Relative Rewards](https://proceedings.neurips.cc/paper_files/paper/2024/hash/5df1d92b478716877f774b82943477b3-Abstract-Conference.html) [arXiv](https://arxiv.org/abs/2404.16767) | NeurIPS 2024 | 84 | ✓ | REBEL：将策略优化归约为相对奖励回归 |
 | B 方法新颖 | [WPO: Enhancing RLHF with Weighted Preference Optimization](https://aclanthology.org/2024.emnlp-main.475/) [arXiv](https://arxiv.org/abs/2406.11827) | EMNLP 2024 | 60 | ✓ | WPO：重加权离线偏好数据模拟在线学习 |
 | B 方法新颖 | [Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning](https://openreview.net/forum?id=2025-Oral--11848-c8ca9413) [arXiv](https://arxiv.org/abs/2407.00617) | ICLR 2025 Oral | 56 |  | INPO：无悔学习逼近一般偏好下的纳什策略 |
 | B 方法新颖 | [Weak-to-Strong Preference Optimization: Stealing Reward from Weak Aligned Model](https://openreview.net/forum?id=f7KxfUrRSb) [arXiv](https://arxiv.org/abs/2410.18640) | ICLR 2025 Spotlight | 29 | ✓ | WSPO：迁移弱模型对齐前后分布差 |
 | B 方法新颖 | [LOGO --- Long cOntext aliGnment via efficient preference Optimization](https://openreview.net/forum?id=vVEBtDDSA6) [arXiv](https://arxiv.org/abs/2410.18533) | ICML 2025 | 11 | ✓ | 长上下文对齐的高效偏好优化 |
 | B 方法新颖 | [Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](https://openreview.net/forum?id=G7DBGlgjjp) [arXiv](https://arxiv.org/abs/2506.10054) | ICLR 2026 | 11 | ✓ | 按数据质量与训练动态动态重加权的 DPO |
+| B 方法新颖 | [Earlier Tokens Contribute More: Learning Direct Preference Optimization From Temporal Decay Perspective](https://openreview.net/forum?id=OspqtLVUN5) [arXiv](https://arxiv.org/abs/2502.14340) | ICLR 2025 | 10 | ✓ | 按 token 位置引入时间衰减权重改进 DPO 奖励，缓解长度偏置，代码开源 |
+| B 方法新颖 | [Multiplayer Nash Preference Optimization](https://openreview.net/forum?id=x7aLhLMVn1) [arXiv](https://arxiv.org/abs/2509.23102) | ICLR 2026 Oral | 8 | ✓ | MNPO：将 Nash 偏好学习从两人博弈推广到多人博弈，缓解单一对手偏差（ICLR 2026 Oral） |
 | B 方法新颖 | [Semi-Supervised Preference Optimization with Limited Feedback](https://openreview.net/forum?id=2026-Oral--710-b9dc3169) [arXiv](https://arxiv.org/abs/2511.00040) | ICLR 2026 Oral | 5 | ✓ | 半监督偏好优化，少量标注 + 大量无标注样本 |
 | C 参考 | [Principle-Driven Self-Alignment of Language Models from Scratch with Minimal Human Supervision](https://proceedings.neurips.cc/paper_files/paper/2023/hash/0764db1151b936aca59249e2c1386101-Abstract-Conference.html) [arXiv](https://arxiv.org/abs/2305.03047) | NeurIPS 2023 Spotlight | 483 |  | 原则驱动自对齐，非 RL |
 | C 参考 | [Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing](https://openreview.net/forum?id=Pnk7vMbznK) [arXiv](https://arxiv.org/abs/2406.08464) | ICLR 2025 | 430 | ✓ | 自合成对齐数据（Magpie），主要用于 SFT/DPO 数据来源 |
@@ -171,6 +192,7 @@
 | A 推荐落地 | [OpenRubrics: Towards Scalable Synthetic Rubric Generation for Reward Modeling and LLM Alignment](https://aclanthology.org/2026.acl-long.791/) [arXiv](https://arxiv.org/abs/2510.07743) | ACL 2026 | 150 | ✓ | 规模化 rubric 生成与 rubric 奖励模型，适合非可验证任务 RL |
 | A 推荐落地 | [Process Reward Models That Think]() [arXiv](https://arxiv.org/abs/2504.16828) | ICML 2026 | 129 | ✓ | ThinkPRM：生成式长 CoT 验证器，仅需 1% 过程标注 |
 | A 推荐落地 | [Reinforcement Learning with Rubric Anchors](https://arxiv.org/abs/2508.12790) | arXiv 2025 | 120 | ✓ | 大规模 rubric 奖励将 RLVR 扩展到开放式任务 |
+| A 推荐落地 | [GenPRM: Scaling Test-Time Compute of Process Reward Models via Generative Reasoning](https://ojs.aaai.org/index.php/AAAI/article/view/40797) [arXiv](https://arxiv.org/abs/2504.00891) | AAAI 2026 | 106 |  | GenPRM：结合代码验证与相对进步估计的生成式 PRM，开源模型与数据，小模型即可通过测试时扩展超越大模型验证器 |
 | A 推荐落地 | [Process Reward Models for LLM Agents: Practical Framework and Directions](https://arxiv.org/abs/2502.10325) | arXiv 2025 | 104 | ✓ | AgentPRM：轻量 actor-critic，最小改动接入现有 RLHF 管线 |
 | A 推荐落地 | [AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following](https://aclanthology.org/2026.acl-long.820/) [arXiv](https://arxiv.org/abs/2511.10507) | ACL 2026 | 67 | ✓ | 专家 rubric 指令遵循基准 + rubric 奖励 RL |
 | A 推荐落地 | [xVerify: Efficient Answer Verifier for Reasoning Model Evaluations](https://aclanthology.org/2026.findings-emnlp.159/) [arXiv](https://arxiv.org/abs/2504.10481) | EMNLP Findings 2026 | 56 | ✓ | xVerify：长推理输出答案抽取与等价判定，可直接作为 RLVR 判分器 |
@@ -185,6 +207,7 @@
 | B 方法新颖 | [Web-Shepherd: Advancing PRMs for Reinforcing Web Agents](https://openreview.net/forum?id=G2kMroO9UV) [arXiv](https://arxiv.org/abs/2505.15277) | NeurIPS 2025 Spotlight | 48 | ✓ | Web 导航首个过程奖励模型，兼顾训练与推理期使用 |
 | B 方法新颖 | [Tool-Augmented Reward Modeling](https://openreview.net/forum?id=d94x0gWTUX) [arXiv](https://arxiv.org/abs/2310.01045) | ICLR 2024 Spotlight | 24 | ✓ | 工具增强奖励模型（计算器/搜索），提升 RM 事实与计算判别 |
 | B 方法新颖 | [Discriminative Policy Optimization for Token-Level Reward Models](https://openreview.net/forum?id=aq3YxKPZBk) [arXiv](https://arxiv.org/abs/2505.23363) | ICML 2025 | 24 | ✓ | 解耦生成与奖励建模的 token 级判别式奖励 |
+| C 参考 | [Reward Design with Language Models](https://openreview.net/forum?id=10uNUgI5Kl) [arXiv](https://arxiv.org/abs/2303.00001) | ICLR 2023 | 364 |  | 以 LLM 作为代理奖励函数训练传统 RL 智能体的早期工作，非 LLM 后训练 |
 | C 参考 | [RoboReward: General-Purpose Vision-Language Reward Models for Robotics](https://arxiv.org/abs/2601.00675) | arXiv 2026 | 83 | ✓ | 机器人视觉语言奖励模型 |
 | C 参考 | [Improve LLM-as-a-Judge Ability as a General Ability](https://aclanthology.org/2025.emnlp-main.712/) [arXiv](https://arxiv.org/abs/2502.11689) | EMNLP 2025 | 51 | ✓ | SFT+DPO 训练 LLM-as-Judge，数据高效 |
 | C 参考 | [LLM-as-a-Verifier: A General-Purpose Verification Framework](https://arxiv.org/abs/2607.05391) | arXiv 2026 | 44 |  | 基于 logits 期望的免训练验证框架 |
@@ -205,6 +228,7 @@
 | A 推荐落地 | [DeepResearcher: Scaling Deep Research via Reinforcement Learning in Real-world Environments](https://aclanthology.org/2025.emnlp-main.22/) [arXiv](https://arxiv.org/abs/2504.03160) | EMNLP 2025 | 318 | ✓ | 真实网页环境下端到端 RL 训练深度研究 Agent |
 | A 推荐落地 | [WebRL: Training LLM Web Agents via Self-Evolving Online Curriculum Reinforcement Learning](https://openreview.net/forum?id=oVKEAFjEqv) [arXiv](https://arxiv.org/abs/2411.02337) | ICLR 2025 | 314 |  | WebRL：自进化课程 + ORM 的开源模型 Web Agent 在线 RL |
 | A 推荐落地 | [GUI-R1 : A Generalist R1-Style Vision-Language Action Model For GUI Agents](https://arxiv.org/abs/2504.10458) | arXiv 2025 | 265 |  | GUI-R1：统一动作空间规则奖励 RL，少量数据训练 GUI Agent |
+| A 推荐落地 | [DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning](https://proceedings.neurips.cc/paper_files/paper/2024/hash/1704ddd0bb89f159dfe609b32c889995-Abstract-Conference.html) [arXiv](https://arxiv.org/abs/2406.11896) | NeurIPS 2024 | 264 |  | DigiRL：在真实 Android 环境中以离线到在线 AWR 与自动评估器训练 GUI 智能体，成功率由 17.7% 提升至 67.2%，代码开源 |
 | A 推荐落地 | [Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning](https://aclanthology.org/2026.acl-long.583/) [arXiv](https://arxiv.org/abs/2508.19828) | ACL 2026 | 255 |  | Memory-R1：RL 学习记忆增删改，少量数据即有效 |
 | A 推荐落地 | [ZeroSearch: Incentivize the Search Capability of LLMs without Searching](https://arxiv.org/abs/2505.04588) | arXiv 2025 | 235 |  | ZeroSearch：以 LLM 模拟搜索引擎训练搜索能力，免除 API 成本 |
 | A 推荐落地 | [WebAgent-R1: Training Web Agents via End-to-End Multi-Turn Reinforcement Learning](https://aclanthology.org/2025.emnlp-main.401/) [arXiv](https://arxiv.org/abs/2505.16421) | EMNLP 2025 | 199 |  | WebAgent-R1：二值奖励端到端多轮 RL，WebArena-Lite 小模型大幅提升 |
@@ -212,6 +236,8 @@
 | A 推荐落地 | [UI-R1: Enhancing Efficient Action Prediction of GUI Agents by Reinforcement Learning](https://ojs.aaai.org/index.php/AAAI/article/view/38816) [arXiv](https://arxiv.org/abs/2503.21620) | AAAI 2026 | 178 |  | UI-R1：规则动作奖励 + GRPO，少量数据提升 GUI 动作预测 |
 | A 推荐落地 | [Agentic Reinforced Policy Optimization](https://openreview.net/forum?id=TX4k7BF6aO) [arXiv](https://arxiv.org/abs/2507.19849) | ICLR 2026 | 170 | ✓ | ARPO：工具调用后高熵处自适应分支 rollout，降低工具调用量 |
 | A 推荐落地 | [SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](https://openreview.net/forum?id=EplNy91Xqh) [arXiv](https://arxiv.org/abs/2509.02479) | ICLR 2026 | 165 |  | SimpleTIR：过滤含异常轮次的轨迹以稳定多轮工具推理 RL，即插即用 |
+| A 推荐落地 | [ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](https://openreview.net/forum?id=OuGAwwAT8G) [arXiv](https://arxiv.org/abs/2503.19470) | NeurIPS 2025 | 143 | ✓ | ReSearch：将检索调用纳入推理链、仅用结果奖励进行 RL，无需推理步骤标注，开源且多跳 QA 提升显著 |
+| A 推荐落地 | [ToRL: Scaling Tool-Integrated RL](https://arxiv.org/abs/2503.23383) | arXiv 2025 | 142 |  | ToRL：在基座模型上直接进行代码解释器集成 RL，开源，7B 模型 AIME24 达 43.3%，较无工具 RL 提升 14 个百分点 |
 | A 推荐落地 | [Reinforcement Learning for Long-Horizon Interactive LLM Agents](https://arxiv.org/abs/2502.01600) | arXiv 2025 | 127 |  | LOOP：无 value、单模型副本的 PPO 变体，AppWorld 显著提升 |
 | A 推荐落地 | [Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning](https://openreview.net/forum?id=DWf4vroKWJ) [arXiv](https://arxiv.org/abs/2506.09033) | NeurIPS 2025 | 100 | ✓ | Router-R1：RL 学习多模型路由与聚合，兼顾成本 |
 | A 推荐落地 | [StepSearch: Igniting LLMs Search Ability via Step-Wise Proximal Policy Optimization](https://aclanthology.org/2025.emnlp-main.1106/) [arXiv](https://arxiv.org/abs/2505.15107) | EMNLP 2025 | 97 | ✓ | StepSearch：步级 PPO + 信息增益中间奖励，多跳搜索提升 |
@@ -231,19 +257,24 @@
 | B 方法新颖 | [ArCHer: Training Language Model Agents via Hierarchical Multi-Turn RL]() [arXiv](https://arxiv.org/abs/2402.19446) | ICML 2024 | 289 |  | ArCHer：分层 actor-critic 多轮 RL |
 | B 方法新颖 | [Text2Reward: Reward Shaping with Language Models for Reinforcement Learning](https://openreview.net/forum?id=tUM39YTRxH) [arXiv](https://arxiv.org/abs/2309.11489) | ICLR 2024 Spotlight | 249 |  | LLM 生成稠密奖励函数用于机器人 RL |
 | B 方法新颖 | [Agent Q: Advanced Reasoning and Learning for Autonomous AI Agents](https://arxiv.org/abs/2408.07199) | arXiv 2024 | 238 |  | MCTS + 自批评 + DPO 的 Web Agent 训练 |
+| B 方法新颖 | [Scaling Long-Horizon LLM Agent via Context-Folding](https://arxiv.org/abs/2510.11967) | arXiv 2025 | 176 |  | Context-Folding：智能体可分支子轨迹并折叠为摘要，配合 FoldGRPO 端到端 RL，以更小活动上下文完成长程任务 |
 | B 方法新颖 | [Reinforcement Learning for Self-Improving Agent with Skill Library](https://aclanthology.org/2026.acl-long.69/) [arXiv](https://arxiv.org/abs/2512.17102) | ACL 2026 | 114 | ✓ | SAGE：技能库增强 GRPO 实现 Agent 自我进化 |
 | B 方法新颖 | [Privileged Information Distillation for Language Models](https://arxiv.org/abs/2602.04942) | arXiv 2026 | 112 |  | 特权信息蒸馏用于多轮 Agent |
 | B 方法新颖 | [Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning](https://arxiv.org/abs/2505.01441) | arXiv 2025 | 110 |  | ARTIST：结果奖励驱动的工具调用与推理统一框架 |
 | B 方法新颖 | [Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents](https://arxiv.org/abs/2604.10674) | arXiv 2026 | 109 |  | 技能条件自蒸馏，缓解 OPSD 与 RL 结合时的训练崩溃 |
 | B 方法新颖 | [SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization](https://aclanthology.org/2026.findings-emnlp.215/) [arXiv](https://arxiv.org/abs/2604.02268) | EMNLP Findings 2026 | 107 |  | 技能上下文逐步撤除的课程 RL，将技能内化到参数中 |
 | B 方法新颖 | [Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents](https://aclanthology.org/2026.acl-long.981/) [arXiv](https://arxiv.org/abs/2601.01885) | ACL 2026 | 92 |  | AgeMem：RL 统一长短期记忆管理 |
+| B 方法新颖 | [AgentEvolver: Towards Efficient Self-Evolving Agent System](https://arxiv.org/abs/2511.10395) | arXiv 2025 | 90 |  | AgentEvolver：以自提问、自导航、自归因降低智能体 RL 的任务构造与探索成本 |
+| B 方法新颖 | [Tree Search for LLM Agent Reinforcement Learning](https://openreview.net/forum?id=ZpQwAFhU13) [arXiv](https://arxiv.org/abs/2509.21240) | ICLR 2026 | 89 | ✓ | Tree-GRPO：树搜索式 rollout 共享前缀以节省预算，并从树结构获得过程级相对优势，代码开源 |
 | B 方法新颖 | [Hindsight Credit Assignment for Long-Horizon LLM Agents](https://arxiv.org/abs/2603.08754) | arXiv 2026 | 81 |  | HCAPO：LLM 作为事后 critic 的长程信用分配 |
+| B 方法新颖 | [Chain-of-Agents: End-to-End Agent Foundation Models via Multi-Agent Distillation and Agentic RL](https://arxiv.org/abs/2508.13167) | arXiv 2025 | 79 | ✓ | Chain-of-Agents：多智能体系统蒸馏为单一智能体基础模型并叠加 agentic RL，模型与代码开源 |
 | B 方法新颖 | [ARPO:End-to-End Policy Optimization for GUI Agents with Experience Replay](https://arxiv.org/abs/2505.16282) | arXiv 2025 | 78 | ✓ | ARPO：GUI Agent 端到端策略优化 + 经验回放 |
 | B 方法新颖 | [CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation](https://arxiv.org/abs/2602.24286) | arXiv 2026 | 71 |  | 大规模 Agent RL 生成高性能 CUDA 核 |
 | B 方法新颖 | [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) | arXiv 2026 | 68 |  | 多轮 Agent 的自蒸馏 RL（SDAR） |
 | B 方法新颖 | [Hierarchy-of-Groups Policy Optimization for Long-Horizon Agentic Tasks](https://openreview.net/forum?id=T8Dev99qnz) [arXiv](https://arxiv.org/abs/2602.22817) | ICLR 2026 | 66 | ✓ | 分层分组优势估计，解决步级 GRPO 上下文不一致 |
 | B 方法新颖 | [Agentic Reinforcement Learning with Implicit Step Rewards](https://openreview.net/forum?id=ooROvpmxMV) [arXiv](https://arxiv.org/abs/2509.19199) | ICLR 2026 | 55 | ✓ | iStar：隐式步级奖励，与标准 RL 算法无缝结合 |
 | B 方法新颖 | [SEED: Self-Evolving On-Policy Distillation for Agentic Reinforcement Learning](https://arxiv.org/abs/2607.14777) | arXiv 2026 | 50 | ✓ | 自进化在线蒸馏：轨迹转为事后技能 |
+| B 方法新颖 | [Skill1: Unified Evolution of Skill-Augmented Agents via Reinforcement Learning](https://arxiv.org/abs/2605.06130) | arXiv 2026 | 41 |  | Skill1：单一策略在同一结果奖励下协同学习技能检索、使用与蒸馏，利用奖励高/低频分量分别分配信用 |
 | B 方法新颖 | [Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning](https://openreview.net/forum?id=zAFrIOeTCp) [arXiv](https://arxiv.org/abs/2605.26684) | ICML 2026 | 37 | ✓ | GraphGPO：状态转移图上的步级优势估计 |
 | B 方法新颖 | [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | arXiv 2026 | 30 | ✓ | 步级在线蒸馏用于小模型工具推理，抑制错误级联 |
 | B 方法新颖 | [RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL System](https://openreview.net/forum?id=JLQV6NxS6W) [arXiv](https://arxiv.org/abs/2602.02488) | ICML 2026 | 26 | ✓ | 环境/策略/奖励模型闭环联合优化 |
@@ -262,6 +293,7 @@
 | C 参考 | [MetaClaw: Just Talk - An Agent That Meta-Learns and Evolves in the Wild](https://arxiv.org/abs/2603.17187) | arXiv 2026 | 37 | ✓ | 部署中持续元学习的 Agent，平台特定 |
 | C 参考 | [ProcMEM: Learning Reusable Procedural Memory from Experience via Non-Parametric PPO for LLM Agents](https://openreview.net/forum?id=9kJQjx2B80) | ICML 2026 Spotlight | 28 | ✓ | 非参数 PPO 的程序性记忆（无摘要，待复核） |
 | C 参考 | [StitchCUDA: An Automated Multi-Agents End-to-End GPU Programing Framework with Rubric-based Agentic Reinforcement Learning](https://openreview.net/forum?id=Id4iwq3dnF) [arXiv](https://arxiv.org/abs/2603.02637) | ICML 2026 | 13 | ✓ | 多 Agent GPU 编程 + rubric RL，领域专用 |
+| C 参考 | [AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](https://aclanthology.org/2026.acl-long.1161/) [arXiv](https://arxiv.org/abs/2604.05846) | ACL 2026 | 4 | ✓ | AgentGL：面向图数据的智能体 RL，配备图原生工具与课程 RL，属领域专用应用 |
 
 ## 训练系统/效率
 
@@ -282,6 +314,7 @@
 | A 推荐落地 | [MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training](https://arxiv.org/abs/2606.30406) | arXiv 2026 | 98 |  | MOPD：多领域 RL 教师在线蒸馏合并能力，优于 Mix-RL |
 | A 推荐落地 | [AdaCoT: Pareto-Optimal Adaptive Chain-of-Thought Triggering via Reinforcement Learning](https://arxiv.org/abs/2505.11896) | arXiv 2025 | 97 |  | AdaCoT：RL 决定是否触发 CoT，生产场景降本 |
 | A 推荐落地 | [Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](https://openreview.net/forum?id=UKOqoULbZS) [arXiv](https://arxiv.org/abs/2508.09726) | ICLR 2026 | 89 |  | GFPO：训练时多采样过滤，推理时缩短长度 |
+| A 推荐落地 | [Defeating the Training-Inference Mismatch via FP16](https://arxiv.org/abs/2510.26788) | arXiv 2025 | 83 |  | 将 BF16 改为 FP16 即可消除训推精度不一致、稳定 RL 训练，几乎零工程代价 |
 | A 推荐落地 | [Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay](https://openreview.net/forum?id=uwUkETPIJN) [arXiv](https://arxiv.org/abs/2506.05316) | NeurIPS 2025 | 73 | ✓ | 难度自适应在线选数 + rollout 回放，降低 RL 微调成本 |
 | A 推荐落地 | [Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?](https://openreview.net/forum?id=IIgl5MWelz) [arXiv](https://arxiv.org/abs/2510.01161) | ICLR 2026 | 69 |  | M2PO：约束重要性权重二阶矩，容忍高度陈旧数据的异步 RL |
 | A 推荐落地 | [SkyRL-Agent: Efficient RL Training for Multi-turn LLM Agent](https://arxiv.org/abs/2511.16108) | arXiv 2025 | 59 |  | SkyRL-Agent：异步调度 + 工具增强配方，SWE-Bench 成本减半 |
@@ -290,6 +323,7 @@
 | B 方法新颖 | [Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training](https://openreview.net/forum?id=VwPt1WDQNB) [arXiv](https://arxiv.org/abs/2503.18929) | NeurIPS 2025 | 39 | ✓ | TBA：轨迹平衡目标支持异步离策略后训练 |
 | B 方法新颖 | [Weak-to-Strong Generalization via Direct On-Policy Distillation](https://arxiv.org/abs/2607.05394) | arXiv 2026 | 25 |  | 迁移小模型 RL 引起的策略偏移到大模型，降低 RL 成本 |
 | B 方法新颖 | [TRACE: A Unified Rollout Budget Allocation Framework for Efficient Agentic Reinforcement Learning](https://aclanthology.org/2026.emnlp-main.1610/) [arXiv](https://arxiv.org/abs/2606.11119) | EMNLP 2026 | 18 | ✓ | 面向多轮 Agent 的前缀级 rollout 预算分配 |
+| B 方法新颖 | [Score Centering Stabilizes Off-policy Reinforcement Learning](https://arxiv.org/abs/2609.20807) | arXiv 2026 | 12 |  | Score centering：以加性校正项抵消训推引擎漂移，在 0.6B–30B 模型上匹敌或优于重要性采样修正 |
 | B 方法新颖 | [You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories](https://openreview.net/forum?id=FGnWADI4yz) [arXiv](https://arxiv.org/abs/2605.21468) | NeurIPS 2026 | 5 | ✓ | RLVR 权重轨迹近似秩一，线性外推节省训练 |
 
 ## 多模态RL
@@ -311,6 +345,9 @@
 | B 方法新颖 | [OpenThinkIMG: Learning to Think with Images via Visual Tool Reinforcement Learning](https://arxiv.org/abs/2505.08617) | arXiv 2025 | 160 | ✓ | 视觉工具强化学习框架，开源 |
 | B 方法新颖 | [GRIT: Teaching MLLMs to Think with Images](https://openreview.net/forum?id=RW3cHh3HgY) [arXiv](https://arxiv.org/abs/2505.15879) | NeurIPS 2025 | 148 | ✓ | 推理链中交错边界框坐标的视觉落地推理 RL |
 | B 方法新颖 | [Perception-Aware Policy Optimization for Multimodal Reasoning](https://openreview.net/forum?id=izbBqTL8vb) [arXiv](https://arxiv.org/abs/2507.06448) | ICLR 2026 | 130 |  | PAPO：隐式感知损失，多模态 RLVR 改进 |
+| B 方法新颖 | [Self-Rewarding Vision-Language Model via Reasoning Decomposition](https://arxiv.org/abs/2508.19652) | arXiv 2025 | 109 |  | Vision-SR1：将视觉感知与语言推理分解并以模型自评构造感知奖励，缓解视觉幻觉与语言捷径 |
+| B 方法新颖 | [Grounded Reinforcement Learning for Visual Reasoning](https://openreview.net/forum?id=1amnhVRQ3l) [arXiv](https://arxiv.org/abs/2505.23678) | NeurIPS 2025 | 106 |  | ViGoRL：令每步推理锚定图像坐标的视觉 grounded RL，提升视觉推理与定位一致性 |
+| B 方法新颖 | [VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](https://openreview.net/forum?id=Idst6X6gmy) [arXiv](https://arxiv.org/abs/2505.19255) | ICLR 2026 | 100 | ✓ | VTool-R1：在推理链中调用图像编辑工具生成中间视觉步骤，以结果奖励 RL 训练“以图思考”，代码开源 |
 | B 方法新颖 | [Scaling RL to Long Videos](https://openreview.net/forum?id=TxedB8hI5O) [arXiv](https://arxiv.org/abs/2507.07966) | NeurIPS 2025 | 99 | ✓ | 长视频推理 RL 全栈框架（数据 + 序列并行训练） |
 | B 方法新颖 | [Monet: Reasoning in Latent Visual Space Beyond Images and Language](https://arxiv.org/abs/2511.21395) | arXiv 2025 | 87 | ✓ | 潜在视觉空间推理，含针对潜变量的 RL 改进 |
 | B 方法新颖 | [VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](https://openreview.net/forum?id=xpjWEgf8zi) [arXiv](https://arxiv.org/abs/2510.16907) | NeurIPS 2025 | 78 |  | VLM Agent 显式状态估计与转移建模的 RL |
@@ -321,11 +358,16 @@
 | C 参考 | [GLM-4.5V and GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning](https://arxiv.org/abs/2507.01006) | arXiv 2025 | 502 | ✓ | GLM-4.xV 技术报告，课程采样 RL |
 | C 参考 | [MedVLM-R1: Incentivizing Medical Reasoning Capability of Vision-Language Models (VLMs) via Reinforcement Learning](https://arxiv.org/abs/2502.19634) | International Conference on Medical Image Computing and Computer-Assisted Intervention 2025 | 235 | ✓ | 医学 VLM 的 GRPO 应用 |
 | C 参考 | [SpaceR: Reinforcing MLLMs in Video Spatial Reasoning](https://arxiv.org/abs/2504.01805) | arXiv 2025 | 172 | ✓ | 视频空间推理 RLVR |
+| C 参考 | [Time-R1: Post-Training Large Vision Language Model for Temporal Video Grounding](https://openreview.net/forum?id=gJ05Gm5VxQ) [arXiv](https://arxiv.org/abs/2503.13377) | NeurIPS 2025 | 170 |  | Time-R1：视频时序定位的 RL 后训练，属领域专用应用 |
 | C 参考 | [Med-R1: Reinforcement Learning for Generalizable Medical Reasoning in Vision-Language Models](https://arxiv.org/abs/2503.13939) | IEEE Transactions on Medical Imaging 2025 | 166 |  | 医学 VLM 的 GRPO 应用 |
+| C 参考 | [Improving Vision-Language-Action Model with Online Reinforcement Learning](https://arxiv.org/abs/2501.16664) | IEEE International Conference on Robotics and Automation 2025 | 149 |  | iRe-VLA：机器人 VLA 模型的在线 RL 与监督交替训练，属具身领域应用 |
 | C 参考 | [Q-Insight: Understanding Image Quality via Visual Reinforcement Learning](https://openreview.net/forum?id=Bds54EfR9x) [arXiv](https://arxiv.org/abs/2503.22679) | NeurIPS 2025 Spotlight | 139 | ✓ | GRPO 用于图像质量评估，领域专用 |
+| C 参考 | [AlphaDrive: Unleashing the Power of VLMs in Autonomous Driving via Reinforcement Learning and Reasoning](https://arxiv.org/abs/2503.07608) | arXiv 2025 | 125 |  | AlphaDrive：自动驾驶规划的 VLM GRPO 训练，属领域专用应用 |
 | C 参考 | [VisualQuality-R1: Reasoning-Induced Image Quality Assessment via Reinforcement Learning to Rank](https://openreview.net/forum?id=uL7lCOHtiZ) [arXiv](https://arxiv.org/abs/2505.14460) | NeurIPS 2025 Spotlight | 112 | ✓ | IQA 的排序式 RL，领域专用 |
 | C 参考 | [Reinforcement Learning Outperforms Supervised Fine-Tuning: A Case Study on Audio Question Answering](https://arxiv.org/abs/2503.11197) | arXiv 2025 | 107 | ✓ | 音频问答 GRPO 案例研究 |
+| C 参考 | [Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](https://arxiv.org/abs/2508.04416) | Computer Vision and Pattern Recognition 2025 | 102 | ✓ | VITAL：长视频推理的工具增强多模态 RL，属领域专用应用 |
 | C 参考 | [UniVG-R1: Reasoning Guided Universal Visual Grounding with Reinforcement Learning](https://arxiv.org/abs/2505.14231) | arXiv 2025 | 95 |  | 视觉定位推理 RL |
+| C 参考 | [OneThinker: All-in-one Reasoning Model for Image and Video](https://arxiv.org/abs/2512.03043) | Computer Vision and Pattern Recognition 2025 | 69 |  | OneThinker：统一图像与视频推理的多任务 RL 模型，偏系统整合 |
 | C 参考 | [Flow-OPD: On-Policy Distillation for Flow Matching Models](https://arxiv.org/abs/2605.08063) | arXiv 2026 | 49 | ✓ | 文生图 Flow Matching 的在线蒸馏，与 LLM 关联较弱 |
 | C 参考 | [Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](https://openreview.net/forum?id=2026-Oral--109-a0fda2bd) [arXiv](https://arxiv.org/abs/2510.11369) | ICLR 2026 Oral | 26 | ✓ | IQA 中 RL 推理机理分析与轻量化，领域专用 |
 | C 参考 | [ParaBridge: Bridging Paralinguistic Perception and Dialogue Behavior in Speech Language Models](https://aclanthology.org/2026.emnlp-main.235/) [arXiv](https://arxiv.org/abs/2606.10581) | EMNLP 2026 | 8 | ✓ | 语音模型在线自蒸馏，领域专用 |
@@ -356,9 +398,17 @@
 | C 参考 | [Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision]() [arXiv](https://arxiv.org/abs/2312.09390) | ICML 2024 Oral | 603 |  | 弱到强泛化，偏超级对齐研究 |
 | C 参考 | [Reasoning Models Don't Always Say What They Think](https://arxiv.org/abs/2505.05410) | arXiv 2025 | 574 |  | 推理模型 CoT 忠实性评估，偏安全研究 |
 | C 参考 | [Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation](https://arxiv.org/abs/2503.11926) | arXiv 2025 | 460 |  | CoT 监控与混淆风险，偏安全 |
+| C 参考 | [A Long Way to Go: Investigating Length Correlations in RLHF](https://arxiv.org/abs/2310.03716) | arXiv 2023 | 343 |  | 揭示 RLHF 收益相当部分来自回复长度增长，对奖励模型偏置分析有参考价值 |
 | C 参考 | [A Mechanistic Understanding of Alignment Algorithms: A Case Study on DPO and Toxicity]() [arXiv](https://arxiv.org/abs/2401.01967) | ICML 2024 Oral | 229 | ✓ | DPO 去毒机理分析 |
 | C 参考 | [Can 1B LLM Surpass 405B LLM? Rethinking Compute-Optimal Test-Time Scaling](https://arxiv.org/abs/2502.06703) | arXiv 2025 | 165 |  | 测试时扩展的计算最优策略分析（PRM 选择） |
+| C 参考 | [Echo Chamber: RL Post-training Amplifies Behaviors Learned in Pretraining](https://arxiv.org/abs/2504.07912) | arXiv 2025 | 162 |  | 受控预训练实验表明 RL 后训练主要放大预训练中已习得的输出格式与行为 |
+| C 参考 | [Language Models Learn to Mislead Humans via RLHF](https://openreview.net/forum?id=xJljiPE6dg) [arXiv](https://arxiv.org/abs/2409.12822) | ICLR 2025 | 154 |  | 人类评估实验表明 RLHF 会使模型更善于说服评估者而非更正确（U-Sophistry），提示奖励信号风险 |
 | C 参考 | [Natural Emergent Misalignment from Reward Hacking in Production RL](https://arxiv.org/abs/2511.18397) | arXiv 2025 | 153 |  | 生产 RL 中奖励攻击导致的涌现失对齐，偏安全 |
+| C 参考 | [What Can RL Bring to VLA Generalization? An Empirical Study](https://openreview.net/forum?id=qmBMPInbZC) [arXiv](https://arxiv.org/abs/2505.19789) | NeurIPS 2025 | 144 |  | VLA 上 RL 与 SFT 泛化能力的实证对比，属具身领域分析 |
+| C 参考 | [Self-Improvement in Language Models: The Sharpening Mechanism](https://openreview.net/forum?id=WJaUkwci9o) [arXiv](https://arxiv.org/abs/2412.01951) | ICLR 2025 Oral | 140 |  | 从“锐化”视角对自我改进进行理论刻画与验证（ICLR 2025 Oral），偏理论分析 |
+| C 参考 | [Does Math Reasoning Improve General LLM Capabilities? Understanding Transferability of LLM Reasoning](https://arxiv.org/abs/2507.00432) | arXiv 2025 | 121 |  | 20+ 推理模型与 Qwen3-14B 受控实验表明 RL 调优的跨域迁移显著优于 SFT，可为后训练数据与方法选择提供依据 |
+| C 参考 | [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874) | arXiv 2025 | 110 |  | 系统比较 SFT 与 RL 的遗忘模式，将 RL 遗忘较少归因于 on-policy 数据 |
+| C 参考 | [Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination](https://ojs.aaai.org/index.php/AAAI/article/view/40687) [arXiv](https://arxiv.org/abs/2507.10532) | AAAI 2026 | 101 |  | 揭示 Qwen2.5 在数学基准上的数据污染使随机/错误奖励看似有效，并提供无污染合成基准，对评估 RLVR 结论具有重要警示意义 |
 | C 参考 | [On Targeted Manipulation and Deception when Optimizing LLMs for User Feedback](https://openreview.net/forum?id=Wf2ndb8nhf) [arXiv](https://arxiv.org/abs/2411.02306) | ICLR 2025 | 79 | ✓ | 用户反馈 RL 导致操纵/欺骗的风险研究 |
 | C 参考 | [Persuasion Dynamics in LLMs: Investigating Robustness and Adaptability in Knowledge and Safety with DuET-PD](https://aclanthology.org/2025.emnlp-main.81/) [arXiv](https://arxiv.org/abs/2508.17450) | EMNLP 2025 | 17 | ✓ | 说服场景下的鲁棒性评估，含 DPO 改进 |
 
@@ -379,6 +429,7 @@
 |---|---|---|---|---|---|
 | A 推荐落地 | [Kimi k1.5: Scaling Reinforcement Learning with LLMs](https://arxiv.org/abs/2501.12599) | arXiv 2025 | 1166 |  | Kimi k1.5：长上下文 RL 与 long2short 方法，工程细节丰富 |
 | A 推荐落地 | [TÜLU 3: Pushing Frontiers in Open Language Model Post-Training](https://arxiv.org/abs/2411.15124) | arXiv 2024 | 1120 | ✓ | Tülu 3：完整开源后训练配方，提出 RLVR |
+| A 推荐落地 | [MiMo: Unlocking the Reasoning Potential of Language Model - From Pretraining to Posttraining](https://arxiv.org/abs/2505.07608) | arXiv 2025 | 126 | ✓ | MiMo-7B：开源从预训练到 RL 的完整推理模型配方，含难度驱动奖励与无缝 rollout 引擎等工程细节 |
 | C 参考 | [Qwen2.5-Math Technical Report: Toward Mathematical Expert Model via Self-Improvement](https://arxiv.org/abs/2409.12122) | arXiv 2024 | 1254 |  | Qwen2.5-Math 技术报告，RM 引导自我改进 |
 | C 参考 | [DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models](https://arxiv.org/abs/2512.02556) | arXiv 2025 | 935 |  | DeepSeek-V3.2 技术报告，含规模化 RL 后训练与 Agent 数据合成 |
 | C 参考 | [DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition](https://arxiv.org/abs/2504.21801) | arXiv 2025 | 354 | ✓ | 形式化定理证明 RL（子目标分解），领域专用 |
@@ -388,6 +439,8 @@
 | C 参考 | [Cosmos-Reason1: From Physical Common Sense To Embodied Reasoning](https://arxiv.org/abs/2503.15558) | arXiv 2025 | 191 | ✓ | 具身推理模型技术报告 |
 | C 参考 | [Seed1.5-Thinking: Advancing Superb Reasoning Models with Reinforcement Learning](https://arxiv.org/abs/2504.13914) | arXiv 2025 | 159 | ✓ | Seed1.5-Thinking 推理模型 RL 技术报告，含训练稳定性经验 |
 | C 参考 | [Goedel-Prover: A Frontier Model for Open-Source Automated Theorem Proving](https://arxiv.org/abs/2502.07640) | arXiv 2025 | 157 | ✓ | 形式化证明模型，专家迭代为主，RL 成分有限 |
+| C 参考 | [Phi-4-reasoning Technical Report](https://arxiv.org/abs/2504.21318) | arXiv 2025 | 135 |  | Phi-4-reasoning 以精选提示 SFT 为主，仅 plus 版本叠加短程结果奖励 RL，RL 贡献有限 |
+| C 参考 | [Competitive Programming with Large Reasoning Models](https://arxiv.org/abs/2502.06807) | arXiv 2025 | 125 |  | OpenAI o1-ioi/o3 竞赛编程报告，无开源与可复现细节 |
 | C 参考 | [Dream-Coder 7B: An Open Diffusion Language Model for Code](https://arxiv.org/abs/2509.01142) | arXiv 2025 | 93 | ✓ | 扩散代码模型技术报告，RL 为后训练一环 |
 | C 参考 | [Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Transformer Model for Agentic Reasoning](https://arxiv.org/abs/2606.15007) | arXiv 2026 | 68 | ✓ | Nemotron 3 Ultra 技术报告，含多环境 RLVR 与 MOPD |
 
